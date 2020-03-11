@@ -263,7 +263,7 @@ def plot_digit(instances, images_per_row=5, **options):
     n_empty = n_rows * images_per_row - len(instances)
     images.append(np.zeros((size, size * n_empty)))
     for row in range(n_rows):
-        rimages = images[row * images_per_row : (row + 1) * images_per_row]
+        rimages = images[row * images_per_row: (row + 1) * images_per_row]
         row_images.append(np.concatenate(rimages, axis=1))
     image = np.concatenate(row_images, axis=0)
     plt.imshow(image, cmap=mpl.cm.binary, **options)
