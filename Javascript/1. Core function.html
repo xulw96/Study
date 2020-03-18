@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        // release $: jQuery.noConflict();
+        // redefine symbol: var nj = jQuery.noConflict();
+
+        // jQuery core function: $()
+        $(function() {
+
+            alert("Hello liwen");
+
+        var $box1 = $(".box1");
+        var $box2 = $("#box2");
+        console.log($box1);
+        console.log($box2);
+
+        var $p = $("<p>I am a paragraph</p>");
+        console.log($p);
+        $box1.append($p);
+
+        var span = document.getElementsByTagName("span");
+        var $span = $(span);
+        console.log($span);
+
+        // jQuery object: array
+        var $div = $("div");
+        console.log($div);
+
+        });
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box1"></div>
+<div id="box2"></div>
+<span>I am span</span>
+
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+</body>
+</html>
