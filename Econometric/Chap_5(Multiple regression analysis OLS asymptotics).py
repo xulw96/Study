@@ -3,7 +3,6 @@ import wooldridge
 import matplotlib.pyplot as plt
 import seaborn as sb
 import numpy as np
-import scipy
 
 # c1
 df = wooldridge.dataWoo('WAGE1')
