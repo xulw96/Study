@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 50px;
+            height: 100px;
+            background: red;
+            margin-top: 5px;
+            border: 1px solid #000;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .class1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .class2{
+            border: 10px solid #000;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        $(function() {
+            // empty
+            var $div = $('div:empty');
+            // parent
+            var $div = $('div:parent');
+            // contains(text)
+            var $div = $('div:contains("I am a div")');
+            // has selector
+            var $div = $("div:has('span')");
+
+            // attr get and set
+            var span = document.getElementsByTagName('span')[0];
+            span.setAttribute("name", 'lnj');
+            var name = span.getAttribute('name');
+            // attr in jQuery
+            $('span').attr('class');
+            $('span').attr('class', 'box');
+            // removeAttr(name)
+            $("span").removeAttribute('class');
+
+            // prop, removeProp
+            $('span').eq(0).prop('demo', 'it666');
+            $('span').prop('demo');
+            $('span').removeProp('demo');
+            $('input').prop('checked');  // return true
+            $('input').attr('checked');  // return checked
+
+            // addClass removeCLass toggleClass
+            var btns = document.getElementsByTagName('button');
+            btns[0].onclick = function(){
+                $('div').addClass('class1 class2');
+            };
+            btns[1].onClick = function(){
+                $('div').removeClass('class1 class2');
+            };
+            btns[2].onClick = function(){
+                $('div').toggleClass('class1 class2')
+            };
+
+            // html innerHTML
+            btns[0].onClick = function(){
+                $('div').html("<p>I am a paragraph<span>I am a span</span></p>");
+            };
+            btns[1].onClick = function(){
+                $('div').html();
+            };
+            // text innerText
+            btns[2].onClick = function(){
+                $('div').text("<p>I am a paragraph<span>I am a span</span></p>");
+            };
+            btns[3].onClick = function(){
+                $('div').text();
+            };
+            // val value
+            btns[4].onClick = function(){
+                $('input').val('please input');
+            };
+            btns[5].onClick = function(){
+                $('input').val()
+            };
+        });
+    </script>
+</head>
+<body>
+
+<button>set html</button>
+<button>get html</button>
+<button>set text</button>
+<button>get text</button>
+<button>set value</button>
+<button>get value</button>
+<div></div>
+<input type="text">
+
+<button>add class</button>
+<button>delete class</button>
+<button>toggle class</button>
+
+<input type="checkbox" checked>
+<span class="span1" name = "it666"></span>
+<span class="span2" name = "lnj"></span>
+<span name = "it666"></span>
+
+<div></div>
+<div>I am a div</div>
+<div>I am a div 123</div>
+<div><span></span></div>
+<div><p></p></div>
+
+</body>
+</html>

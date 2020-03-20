@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        $(function () {
+            // eventName(), support jQuery, multiple events
+            $('button').click(function () {
+                alert('hello lnj');
+            });
+            $('button').click(function () {
+                alert('hello 123');
+            });
+            // on(), get all JS events
+            $('button').on('click', function () {
+                alert('hello lnj2');
+            });
+
+            // remove events
+
+        })
+    </script>
+</head>
+<body>
+
+<button>I am a button</button>
+</body>
+</html>

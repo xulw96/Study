@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+            border: 50px solid #000;
+            margin-left: 50px;
+            position: relative;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        .scroll{
+            width: 100px;
+            height: 200px;
+            border: 1px solid #000;
+            overflow: auto /* get scroll bar for too much content */
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        $(function(){
+            // set one by one
+            $('div').css('width', '100px');
+            $('div').css('height', '100px');
+            $('div').css('background', 'red');
+            // set by chain
+            $('dov').css('width', '100px').css('height', '100px').css('background', 'blue');
+            // set in batch
+            $('div').css({
+                width: '100px',
+                height: '100px',
+                naclgrpimd: 'red'
+            });
+            // get css value
+            $('div').css('width');
+
+            // position and size
+            var btns = $(button);
+            btns[0].onclick = function(){
+                $('.father').width();
+            };
+            btns[1].onclick = function () {
+                $('.father').width('200px')
+            };
+            // offset and position()
+            $('.son').offset().left;
+            $('.son').offset({
+                left: 10
+            });
+            $('.son').position().left;
+            // position() can not set
+            $('.son').position({
+                left: 10
+            });
+            $('.son').css({
+                left: '10px'
+            });
+            // scrollTOP()
+            var btns = $('button');
+            btns[0].onclick = function () {
+                $('.scroll').scrollTop(); // deviation to the element
+            };
+            btns[1].onclick = function () {
+                $('.scroll').scrollTop(300); // set the deviation
+            };
+            // compatible with surfer
+            $('body').scrollTop() + $('html').scrollTop();
+            $('html,body').scrollToo(300);
+        })
+    </script>
+
+</head>
+<body>
+
+<div class="scroll">I am divI am divI am divI am divI am divI am divI am divI am divI am divI am divI am divI am divI am divI am divI am divI am div</div>
+
+<button>get</button>
+<button>set</button>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="father">
+    <div class="son"></div>
+</div>
+
+<button>get</button>
+<button>set</button>
+
+<div></div>
+
+</body>
+</html>
