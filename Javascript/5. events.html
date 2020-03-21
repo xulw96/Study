@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
     <script>
         $(function () {
             // eventName(), support jQuery, multiple events
@@ -18,13 +34,110 @@
                 alert('hello lnj2');
             });
 
+            function test1() {
+                alert('hello lnj');
+            }
+            $('button').click(test1);
             // remove events
+            $('button').off();
+            $('button').off('click', test1);
+
+            // events popup (same events take place inside out)
+            $('.son').click(function (event) {
+                alert('son');
+                // stop popup
+                // return false;
+                event.stopPropagation();
+            });
+            $('.father').click(function () {
+                alert('father');
+            });
+
+            // stop default events
+            $('a').click(function (event) {
+                alert('pop out sign up window');
+                //return false;
+                event.stopPropagation()
+            });
+
+            // auto events, trigger will popup. triggerHandler will not popup
+            $('.son').trigger('click');
+            $('.son').triggerHandler('click');
+            $("input[type='submit']").click(function () {
+                alert('submitt');
+            });
+            // trigger start both event and basic behavior. triggerHandler will not do behavior
+            $("input[type='submit']").trigger('click');
+            $("input[type='submit']").triggerHandler('click');
+
+            // user defined events
+            $('.son').on('myClick', function (){
+                alert('son');
+            });
+            $('.son').trigger('myCLick');
+
+            // event namespace, applicable to event popup
+            $('.son').on('click.zs', function (){
+                alert('click1');
+            });
+            $('.son').on('click.ls', function(){
+                alert('click2');
+            });
+            $('.son').trigger('click.zs');
+
+            // event listener
+            // dynamic add elements
+            $('button').click(function(){
+                $('ul').append('<li>I am a new li</li>');
+            });
+            // add events to all elements, not include the new added elements
+            $('ul>li').click(function(){
+                // this is who triggered the event
+                $(this).html();
+            });
+            // the event will be listened by the ul, but handled by li
+            $('ul').delegate('li', 'click', function(){
+                // note $('this') will get li
+                $(this).html();
+            });
+
+            // mouseover mouseout; sons will trigger events from fathers
+            $('.father').mouseover(function(){
+                console.log('father mouse in')
+            });
+            // mouseenter mouseleave; sons will not trigger
+            $('father').mouseenter(function(){
+                console.log('father mouse in')
+            });
+            // mouseenter and leave at the same time
+            $('.father').hover(function(){
+                console.log('father mouse in');
+            }, function(){
+                console.log('father mouse out');
+            });
+            $('.father').hover(function(){
+                console.log('father has been moused');
+            })
 
         })
     </script>
 </head>
 <body>
+<ul>
+    <li>I am the No.1 li</li>
+    <li>I am the No.2 li</li>
+    <li>I am the No.3 li</li>
+</ul>
+<button>add a new li</button>
+<div class="father">
+    <div class="son"></div>
+</div>
 
+<a href="http://www.baidu.com">I am baidu</a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
 <button>I am a button</button>
 </body>
 </html>
