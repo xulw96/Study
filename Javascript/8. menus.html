@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            list-style: none;
+            width: 300px;
+            margin: 100px auto;
+            border: 1px solid #000;
+        }
+        .nav>li {
+            border: 1px solid #000;
+            line-height: 35px;
+            border-bottom: none;
+            text-indent: 2em;
+        }
+        .nav>li:last-child{
+            border-bottom: 1px solid #000;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .nav>li:first-child{
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        .nav>li>span{
+            background: url('https://i0.hdslb.com/bfs/archive/4de86ebf90b044bf9ba2becf042a8977062b3f99.png');
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+        }
+        .sub>li{
+            list-style: none;
+            background: mediumpurple;
+            border-bottom: 1px solid white;
+        }
+        /*
+        animation by css
+         */
+        .sub>li:hover{
+            background: red;
+        }
+        .sub{
+            display: none;
+        }
+        .nav>.current>span{
+            transform: rotate(90deg);
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        $(function () {
+            $('.nav>li').click(function () {
+                // filter a children
+                $(this).children('.sub').slideDown(1000);
+                $(this).siblings().children('.sub').slideUp(1000);
+                $(this).addClass('current');
+                $(this).siblings().removeClass('current');
+            })
+        })
+    </script>
+</head>
+<body>
+
+<ul class="nav">
+    <li class="current">first menu<span></span>
+        <ul class="sub">
+            <li>second menu</li>
+            <li>second menu</li>
+            <li>second menu</li>
+            <li>second menu</li>
+            <li>second menu</li>
+        </ul>
+    </li>
+    <li>first menu<span></span>
+        <ul class="sub">
+            <li>second menu</li>
+            <li>second menu</li>
+            <li>second menu</li>
+            <li>second menu</li>
+            <li>second menu</li>
+        </ul>
+    </li>
+    <li>first menu<span></span>
+        <ul class="sub">
+        </ul>
+    </li>
+    <li>first menu<span></span>
+        <ul class="sub">
+        </ul>
+    </li>
+    <li>first menu<span></span>
+        <ul class="sub">
+        </ul>
+    </li>
+    <li>first menu<span></span>
+        <ul class="sub">
+        </ul>
+    </li>
+
+</ul>
+</body>
+</html>

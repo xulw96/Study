@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 440px;
+            height: 298px;
+            border: 1px solid #000;
+            margin: 50px auto;
+        }
+        .nav>li{
+            list-style: none;
+            width: 110px;
+            height: 50px;
+            background: orange;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+        }
+        .nav>.current{
+            background: #cccccc;
+        }
+        .content>li{
+            list-style: none;
+            display: none;
+        }
+        .content>.show{
+            display: block;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        $(function(){
+             $('.nav>li').hover(function(){
+                 $(this).addClass('current');
+                 $(this).siblings().removeClass('current');
+
+                 let index = $(this).index();
+                 $('.content>li').eq(index).addClass('show');
+                 $('.content>li').eq(index).siblings().removeClass('show')
+             }, function(){
+                 $(this).removeClass('current');
+                 let index = $(this).index();
+                 $('.content>li').eq(index).removeClass('show');
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul class="nav">
+        <li class="current">H5 + C3</li>
+        <li>jQuery</li>
+        <li>C</li>
+        <li>C ++</li>
+    </ul>
+
+    <ul class="content">
+        <li class="show"><img src="https://i1.hdslb.com/bfs/face/bcd18883b3060da81aaae73aedc82afcd81ae072.jpg@50w_50h.webp" alt=""></li>
+        <li><img src="https://i1.hdslb.com/bfs/face/bcd18883b3060da81aaae73aedc82afcd81ae072.jpg@50w_50h.webp" alt=""></li>
+        <li><img src="https://i1.hdslb.com/bfs/face/bcd18883b3060da81aaae73aedc82afcd81ae072.jpg@50w_50h.webp" alt=""></li>
+        <li><img src="https://i1.hdslb.com/bfs/face/bcd18883b3060da81aaae73aedc82afcd81ae072.jpg@50w_50h.webp" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background: red;
+        }
+        .two{
+            background: blue;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        $(function(){
+            $('button').eq(0).click(function(){
+                $('.one').animate({
+                    width: 500
+                }, 1000, function () {
+                    alert('animate ends')
+                })
+            });
+            $('button').eq(1).click(function(){
+                $('.one').animate({
+                    width: '+=100'
+                }, 1000, function () {
+                    alert('animate ends')
+                })
+            });
+            $('button').eq(2).click(function(){
+                // speed change during animating
+                $('.two').animate({
+                    /* keywords for attribute */
+                    width: 'hide'
+                }, 1000, 'Linear', function(){
+                    alert('animate ends')
+                })
+            });
+        })
+    </script>
+
+</head>
+<body>
+
+<button>control attribute</button>
+<button>add attribute</button>
+<button>keywords</button>
+
+<div class="one"></div>
+<div class="two"></div>
+</body>
+</html>
