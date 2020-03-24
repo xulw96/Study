@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 600px;
+            height: 161px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        ul{
+            list-style: none;
+            width: 1200px;
+            height: 161px;
+            background: rgba(255, 0, 0, 0.5);
+        }
+        ul>li{
+            float: left;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        $(function () {
+            // animate scrolling
+            let offset = 0;
+            let timer;
+            function autoPlay() {
+                timer = setInterval(function () {
+                    offset += -10;
+                    if (offset <= -1200) {
+                        offset = 0;
+                    }
+                    $('ul').css('marginLeft', offset)
+                }, 50);
+            }
+            autoPlay();
+            // listen to hover: stop when enter, continue when leave
+            $('li').hover(function(){
+                clearInterval(timer);
+                // mask not selected-ones
+                $(this).siblings().fadeTo(100, 0.5);
+                $(this).fadeTo(100, 1);
+            }, function () {
+                autoPlay();
+                $('li').fadeTo(100, 1);
+            })
+        })
+    </script>
+
+</head>
+<body>
+
+<div>
+    <ul>
+        <li><img src="https://i2.hdslb.com/bfs/face/a1efbdc8b34da2d5765f25ee5910b9441724aae0.jpg@68w_68h.webp" alt=""></li>
+        <li><img src="https://i2.hdslb.com/bfs/face/a1efbdc8b34da2d5765f25ee5910b9441724aae0.jpg@68w_68h.webp" alt=""></li>
+        <li><img src="https://i2.hdslb.com/bfs/face/a1efbdc8b34da2d5765f25ee5910b9441724aae0.jpg@68w_68h.webp" alt=""></li>
+        <li><img src="https://i2.hdslb.com/bfs/face/a1efbdc8b34da2d5765f25ee5910b9441724aae0.jpg@68w_68h.webp" alt=""></li>
+        <li><img src="https://i2.hdslb.com/bfs/face/a1efbdc8b34da2d5765f25ee5910b9441724aae0.jpg@68w_68h.webp" alt=""></li>
+        <li><img src="https://i2.hdslb.com/bfs/face/a1efbdc8b34da2d5765f25ee5910b9441724aae0.jpg@68w_68h.webp" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

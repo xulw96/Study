@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        $(function () {
+            $('button').click(function () {
+                let $li = $('<li>new li </li>');
+                // append/pretend
+                $('ul').append($li);
+                $('ul').prepend($li);
+                $li.appendTo('ul');
+                $li.prependTo('ul');
+                // after/before
+                $('ul').after($li);
+                $('ul').before($li);
+                $li.insertAfter('ul');
+                $li.insertBefore('ul');
+            });
+            $('button').click(function () {
+                // empty, delete content and children
+                $('div').empty();
+                // remove, delete all
+                $('li').remove();
+                $('li').remove('.item')
+            });
+            $('button').click(function () {
+                let $h6 = $('<h6>I am heading 6</h6>');
+                // replace
+                $('h1').replaceWith($h6);
+                $h6.replaceAll('h1');
+            });
+            // clone
+            $('button').eq(0).click(function () {
+                // clone element, not events;
+                let $li = $('li:first').clone(false);
+                $('ul').append($li);
+            });
+            $('button').eq(1).click(function () {
+                // clone both element and events;
+                let $li = $('li:first').clone(true);
+                $('ul').append($li);
+            });
+            $('li').click(function () {
+                alert($(this).html());
+            })
+        })
+    </script>
+</head>
+<body>
+<button>low copy nodes</button>
+<button>high copy nodes</button>
+
+<ul>
+    <li>I am No.1 li</li>
+    <li>I am No.2 li</li>
+    <li>I am No.3 li</li>
+    <li>I am No.4 li</li>
+    <li>I am No.5 li</li>
+</ul>
+<button>Replace nodes</button>
+<h1>I am heading 1</h1>
+<h1>I am heading 2</h1>
+<p>I am paragraph </p>
+
+<button>delete nodes</button>
+<ul>
+    <li class="item">I am the No.1 li</li>
+    <li>I am the No.2 li</li>
+    <li>I am the No.3 li</li>
+    <li>I am the No.4 li</li>
+    <li>I am the No.5 li</li>
+</ul>
+<div>I am div
+    <p>I am a paragraph</p>
+</div>
+<button>add nodes</button>
+<ul>
+    <li>I am the No.1 li</li>
+    <li>I am the No.2 li</li>
+    <li>I am the No.3 li</li>
+</ul>
+<div>I am div</div>
+</body>
+</html>
