@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    width: 100%;
+    height: 45px;
+    background: red;
+}
+.header>.logo{
+    float: left;
+    margin-left: 20px;
+    opacity: 0.5;
+}
+.header>.log:hover{
+    opacity: 1;
+}
+.header.logo>a{
+    display: inline-block;
+    width: 78px;
+    height: 21px;
+    background: url('../images/logo.png') no-repeat 0 0;
+}
+.header.register{
+    float: right;
+    line-height: 45px;
+}
+.header>.register>li{
+    list-style: none;
+    float: left;
+    margin-right: 20px;
+    color: #fff;
+    opacity: 0.5;
+}
+.header>.register>li:hover{
+    opacity: 1;
+}
+.content{
+    width: 100%;
+    height: 460px;
+    background: blue;
+}
+.content>.content_in{
+    width: 1200px;
+    height: 100%;
+    background: deeppink;
+    margin: 0 auto;
+}
+.content_in>.content_left{
+    float: left;
+    width: 800px;
+    height: 100%;
+    background: pink;
+}
+.content_in>.content_toolbar{
+    width: 100%;
+    height: 40px;
+    background: #000;
+}
+.content_toolbar>span{
+    display: inline-block;
+    width: 122px;
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #fff;
+    opacity: 0.5;
+}
+.content_toolbar>span:hover{
+    opacity: 1;
+}
+.content_toolbar>span>i{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url('../images/icon_sprite.png') no-repeat 0 0;
+    margin-right: 10px;
+    vertical-align: -5px;
+}
+.content_toolbar>span:nth-child(1){
+    background-position: -60px -20px;
+}
+.content_toolbar>span:nth-child(2){
+    background-position: -20px -20px;
+}
+.content_toolbar>span:nth-child(3){
+    background-position: -40px -240px;
+}
+.content_toolbar>span:nth-child(4){
+    background-position: -100px -20px;
+}
+.content_toolbar>span:nth-child(5){
+    background-position: -40px -300px;
+}
+.content_left>.content_list{
+    width: 100%;
+    height: 420px;
+    background: purple;
+}
+.content_in>.content_right{
+    float: right;
+    width: 400px;
+    height: 100%;
+    background: gray;
+}
+.footer{
+    width: 100%;
+    height: 60px;
+    background: green;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.footer>.footer.in{
+    width: 1200px;
+    height: 1000%;
+    background: plum;
+    margin:0 auto;
+}
