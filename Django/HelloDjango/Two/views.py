@@ -27,7 +27,7 @@ def get_students(request):
         'eat': 'meat',
         'students': students
     }
-    return render(request, 'student_list.html', context=context)
+    return render(request, 'student_three_list.html', context=context)
 
 
 def update_student(request):
