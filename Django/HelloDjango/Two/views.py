@@ -41,3 +41,4 @@ def delete_student():
     student = Student.objects.get(pk=3)
     student.delete()
     return HttpResponse('student delete success')
+
