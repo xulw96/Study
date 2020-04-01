@@ -1,7 +1,7 @@
 from django.db.models import Max, F, Q
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import User, Order, Grade, Customer, Company
+from .models import User, Order, Grade, Customer, Company, Animal
 
 
 def get_user(request):
@@ -62,3 +62,13 @@ def get_company(request):
     for company in companies:
         print(company.c_name)
     return HttpResponse('get successfully')
+
+
+def get_animals(request):
+    animals = Animal.objects.filter(is_delete=False)
+
+    for animal in animals:
+        print(animal.a_name)
+
+    # Animal.objects.create_animal()
+    return HttpResponse('find successfully')
