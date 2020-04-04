@@ -42,3 +42,6 @@ def delete_student():
     student.delete()
     return HttpResponse('student delete success')
 
+
+def students():
+    return None

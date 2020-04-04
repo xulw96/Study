@@ -4,17 +4,20 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Django/HelloDjango" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Django/Djangomodel" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Django/DjangoTemplate" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (Study)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jquery" level="application" />
   </component>
   <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/Django/HelloDjango/templates" />
         <option value="$MODULE_DIR$/Django/HelloDjango/Three/templates" />
         <option value="$MODULE_DIR$/Django/Djangomodel/templates" />
+        <option value="$MODULE_DIR$/Django/DjangoTemplate/templates" />
       </list>
     </option>
   </component>
