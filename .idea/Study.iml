@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="PYTHON_MODULE" version="4">
-  <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Django/HelloDjango" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Django/Djangomodel" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Django/DjangoTemplate" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Django/Djangoview" isTestSource="false" />
-    </content>
-    <orderEntry type="jdk" jdkName="Python 3.7 (Study)" jdkType="Python SDK" />
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jquery" level="application" />
-  </component>
+<module classpath="CMake" type="PYTHON_MODULE" version="4">
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
