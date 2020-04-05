@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<form action="{% url 'app:do_login' %}" method="post">
+    <span>username:</span>
+    <input type="text" name="uname" placeholder="please type in username" >
+    <br>
+    <button>login</button>
+</form>
+
+</body>
+</html>

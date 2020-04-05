@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Django/HelloDjango" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Django/Djangomodel" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Django/DjangoTemplate" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Django/Djangoview" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (Study)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -18,6 +19,7 @@
         <option value="$MODULE_DIR$/Django/HelloDjango/Three/templates" />
         <option value="$MODULE_DIR$/Django/Djangomodel/templates" />
         <option value="$MODULE_DIR$/Django/DjangoTemplate/templates" />
+        <option value="$MODULE_DIR$/Django/Djangoview/templates" />
       </list>
     </option>
   </component>
