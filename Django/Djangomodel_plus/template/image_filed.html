@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ImageField</title>
+</head>
+<body>
+
+<form action="{% url 'app:image_filed' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <span>username</span><input type="text" name="username" placeholder="give your username here">
+    <br>
+    <span>icon</span><input type="file" name="icon">
+    <br>
+    <button>upload</button>
+
+</form>
+
+</body>
+</html>
