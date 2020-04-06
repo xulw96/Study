@@ -1,0 +1,22 @@
+{# multiple inheritance #}
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+    <h3>hahaha, you are so strong</h3>
+{% endblock %}
+
+{% block header %}
+    {# retains father's attribute #}
+    {{ block.super }}
+    <h4>heard you are energetic</h4>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}
+
+{% block ext_css %}
+    {#  <link rel="stylesheet" href="/static/css/home_mine.css"> #}
+    <link rel="stylesheet" href="{% static 'css/home_mine.css' %}" >
+{% endblock %}

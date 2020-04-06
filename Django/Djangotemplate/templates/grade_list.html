@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GradeList</title>
+</head>
+<body>
+<ul>
+    {% for grade in grade_list %}
+        <li><a href="/two/students/{{ grade.id }}">{{ grade.g_name }}</a></li>
+    {% endfor %}
+
+</ul>
+
+<hr>
+
+<a href="/two/learn">GO Learn</a>
+<a href="{% url 'second:learn' %}">Go Go learn</a>
+<a href="{% url 'second:get_time' 15 31 48 %}">Time Time</a>
+<a href="{% url 'second:get_date' year=2018 moth=9 day=19 %}">Date Date</a>
+
+
+</body>
+</html>
