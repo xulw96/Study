@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form action="{% url 'app:login' %}" method="post">
+    <span>username:</span><input type="text" name="username" placeholder="username">
+    <br>
+
+    <span>verify code:</span><input type="text" name="verify_code" placeholder="verify the code">
+    <br>
+
+    <img src="{% url 'app:get_code' %}" alt="">
+    <br>
+
+    <button>submit</button>
+</form>
+
+</body>
+</html>

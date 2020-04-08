@@ -22,5 +22,5 @@ class Book(models.Model):
 
 class UserModel(models.Model):
     u_name = models.CharField(max_length=16)
-    # relative to media_root
-    u_icon = models.ImageField(upload_to='icons')
+    # relative to media_root; support parsing datetime shortcut
+    u_icon = models.ImageField(upload_to='%Y/%m/%d/icons')
