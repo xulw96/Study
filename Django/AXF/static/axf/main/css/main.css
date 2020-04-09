@@ -1,0 +1,27 @@
+footer>dl>dt>span{
+    display: inline-block;
+    width: 0.513889rem;
+    height: 0.513889rem;
+}
+footer>dl>dd{
+    width: 100%;
+    height: 0.70833rem;
+}
+footer>.market>span{
+    background: url(/static/img/home.png) no-repeat;
+    background-size: 0.513889rem;
+}
+footer>.market>span{
+    background: url(/static/img/market.png) no-repeat;
+    background-size: 0.513889rem;
+}
+footer>.cart>span{
+    background: url(/static/img/cart.png) no-repeat;
+    background-size: 0.513889rem;
+}
+footer>.mine>span{
+    background: url(/static/img/mine.png) no-repeat;
+    background-size: 0.513889rem;
+}
+
+

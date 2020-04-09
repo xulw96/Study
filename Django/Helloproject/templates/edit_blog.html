@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EditBlog</title>
+    <script type="text/javascript" src="/static/tiny_mce/tiny_mce.js"></script>
+    <script type="text/javascript">tinyMCE.init({
+        'mode': 'textarea',
+        'them': 'advanced',
+        'width': 800,
+        'height': 600
+    })</script>
+
+</head>
+<body>
+
+<form action="{% url 'app:block' %}" method="post">
+    {% csrf_token %}
+    <textarea name="content" id="" cols="30" rows="10">
+    </textarea>
+    <button>save</button>
+</form>
+
+</body>
+</html>

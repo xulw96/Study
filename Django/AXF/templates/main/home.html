@@ -1,0 +1,60 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'axf/main/css/home.css' %}">
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="https://lib.baomitu.com/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script type="text/javascript" src="{% static 'axf/main/js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="home">
+
+        {#swiper#}
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for main_wheel in main_wheels %}
+                    <div class="swiper-slide">
+                        <img src="{{ main_wheel.img }}" alt="{{ main_wheel.name }}">
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        {#header#}
+        <div class="topMenu">
+            <nav>
+                <ul>
+                    {% for main_nav in main_navs %}
+                        <li>
+                            <img src="{{ main_nav.img }}" alt="{{ main_nav.name }}">
+                            <span>{{ main_nav.name }}</span>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </nav>
+        </div>
+
+        {#mustbuy#}
+        <div class="swiper-container" id="swiperMenu">
+            <div class="swiper-wrapper">
+                {% for main_mustbuy in main_mustbuys %}
+                    <li class="swiper-slide">
+                        <img src="{{ main_mustbuy.img }}" alt="{{ main_mustbuy.name }}">
+                    </li>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+
+    </div>
+{% endblock %}
