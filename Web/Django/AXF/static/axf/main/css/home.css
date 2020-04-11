@@ -44,3 +44,85 @@ footer>.home>dd{
 .topMenu>nav>li>img{
     width: 2.5rem;
 }
+
+#swiperMenu{
+    width: 100%;
+}
+#swiperMenu>li>img{
+    width: 100%;
+}
+
+/*shop*/
+.shop_container{
+    background: white;
+    margin-top: 0.3rem;
+}
+.shop_container>h2>img{
+    width: 100%;
+}
+.shop_container>fieldset{
+    border: none;
+    padding: 0;
+}
+.shop_container>fieldset>a{
+    display: inline-block;
+    width: 49%;
+}
+.shop_container>fieldset>img{
+    width: 100%;
+}
+.shop_container>ul{
+    display: flex;
+}
+.shop_container>ul>li{
+    width: 2.5rem;
+    text-align: center;
+    font-size: 0.35rem;
+}
+.shop_container>ul>li>img{
+    width: 2.5rem;
+}
+.shop_container>ol{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shop_container>ol>li{
+    list-style: none;
+    width: 5rem;
+}
+.shop_container>ol>a{
+    display: block;
+}
+.shop_container>ol>a>img{
+    width: 100%;
+}
+
+.mainInfo{
+    background-color: white;
+}
+.mainInfo>section{
+    margin: 0.2rem auto 0;
+    padding: 0.2rem 0;
+    width: 9.2rem;
+}
+.mainInfo>section>h3{
+    text-align: center;
+    height: 1.2rem;
+    position: relative;
+}
+.mainInfo>section>h3>a{
+    color: grey;
+    font-size: 0.3rem;
+    line-height: 0;
+    position: absolute;
+    right: 0.1rem;
+    display: block;
+}
+.mainInfo>section>h3>span{
+    background-color: yellow;
+    width: 0.6rem;
+    height: 0.1rem;
+    position: absolute;
+    bottom: 0.25rem;
+    left: 4.3rem;
+}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from App.models import MainWheel, MainNav, MainMustBuy
+from App.models import MainWheel, MainNav, MainMustBuy, MainShop, MainShow
 
 
 def home(request):
@@ -8,11 +8,22 @@ def home(request):
     main_navs = MainNav.objects.all()
     main_mustbuys = MainMustBuy.objects.all()
 
+    main_shops = MainShop.objects.all()
+    main_shop0_1 = main_shops[0: 1]
+    main_shop1_3 = main_shops[1: 3]
+    main_shop3_7 = main_shops[3: 7]
+    main_shop7_11 = main_shops[7: 11]
+    main_shows = MainShow.objects.all()
     data = {
         'title': 'homepage',
         'main_wheel': main_wheels,
         'main_navs': main_navs,
         'main_mustbuys': main_mustbuys,
+        'main-shop0_1': main_shop0_1,
+        'main_shop1_3': main_shop1_3,
+        'main_shop3_7': main_shop3_7,
+        'main_shop7_11': main_shop7_11,
+        'main_show': main_show,
     }
     return render(request, 'main/home.html', context=data)
 

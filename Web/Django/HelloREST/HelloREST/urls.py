@@ -1,4 +1,4 @@
-"""Djangotemplate URL Configuration
+"""HelloREST URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -18,6 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/', include('App.urls')),
-    path('two/', include('Two.urls'), namespace='second')
+    path('app/', include(('App.urls', 'App'), namespace='app')),
+    path('api/', include(('Api.urls', 'Api'), namespace='api'))
 ]
