@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <button @click="handleClick()">click</button>
+    <div :class="isActive?'red':'yellow'">dynamic switch</div>
+    <div :class="classObj">dynamic switch class</div>
+    <div :class="classArr">dynamic switch array</div>
+
+    <div :style="'background:'+ (isActive?'red':'yellow')">111111</div>
+    <div :style="styleObj">11111</div>
+    <div :style="styleArr">11111</div>
+</div>
+<script type="javascript">
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            isActive: true,
+            classObj: {
+                a: true,
+                b: true,  // class name for css control
+            }, // the element doesn't support dynamic binding
+            classArr: ["a", "b"],  // this array can be further managed by console
+            styleObj: {
+                backgroundColor: "red",
+            },
+            styleArr: [],
+        },
+        methods: {
+            handleClick() {
+                this.isActive = !this.isActive
+            }
+        }
+    })
+</script>
+
+
+</body>
+</html>

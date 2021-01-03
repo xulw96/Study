@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <ul>
+        <li v-for="(data, index) in dataList" key="data.id">
+            {{ data }}--{{ index }}
+        </li>
+    </ul>
+
+    <ul>
+        <li v-for="(data, index) of dataList">
+            {{ data }}--{{ index }}
+        </li>
+    </ul>
+
+    <ul>
+        <li v-for="(data, key) in obj">
+            {{ data }}=={{ key }}
+        </li>
+    </ul>
+</div>
+
+<script type="javascript">
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            dataList: ["111", "222", "333"],
+            obj: {
+                name: "kerwin",
+                age: 100,
+                location: "dalian",
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

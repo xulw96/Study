@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="box">
+    <input type="text" @input="handleInput()" v-model="myText"/>
+    <ul>
+        <li v-for="data in dataList">
+            {{ data }}
+        </li>
+    </ul>
+</div>
+
+
+<script type="javascript">
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            myText: " ",
+            dataList: ["aaa", "bbb", "ccc", "ddd", "eee"],
+            list: ["aaa", "bbb", "ccc", "ddd", "eee"],
+        },
+        methods: {
+            handleInput() {
+                console.log(this.myText)
+                // console.log("once value change, it will be triggered")
+
+                let newList = this.list.filter(item => item.indexOf(this.myText > -1))
+
+                this.dataList = newList
+            }
+        }
+    })
+</script>
+</body>
+
+</html>

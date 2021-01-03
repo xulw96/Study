@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="box">
+    <button @click="handleClick">click</button>
+    <div v-if="isCreated">dynamic create-1</div>
+    <div v-else>dynamic create-2</div>
+
+    <ul v-if="dataList.length">
+        <li v-for="data in dataList">
+            {{ data }}
+        </li>
+    </ul>
+
+    <div v-else>
+        Nothing in cart
+    </div>
+
+    <div v-if="which===1">
+        111111
+    </div>
+
+    <div v-else-if="which===2">
+        222222
+    </div>
+
+    <div v-else>
+        3333333
+    </div>
+</div>
+<script type="javascript">
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            isCreated: false,
+            dataList: [],
+            which: 1,
+        },
+        methods: {
+            handleClick() {
+                this.isCreated = !this.isCreated;
+                this.dataList = [1, 2, 3];
+            },
+        }
+    })
+</script>
+</body>
+</html>

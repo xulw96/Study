@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    {{ 10 + 20 }}
+    {{ myname }}
+    {{ 10 > 20 ? 'aaa' : 'bbb' }}
+    {{ myhtml }}
+    <div v-html="myhtml"></div>
+
+    <div v-show="isShow">dynamic show</div>
+
+    <div v-if="isCreated">dynamic create</div>
+</div>
+
+<div>
+    {{ 10 + 20 }}
+</div>
+
+<script>
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            myname: "kerwin",
+            isShow: true,
+            isCreated: true,
+            myhtml: "<b>11111</b>"
+        }
+    })
+</script>
+</body>
+</html>
