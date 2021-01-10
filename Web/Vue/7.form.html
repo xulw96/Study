@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div id="box">
+    <input type="text" v-model="myText"/>
+    {{ mytext }}
+    <textarea v-model="mytext"></textarea>
+    <br>
+    <input type="checkbox" v-model="isChecked">
+    <br>
+    <p>the sport you like is?
+        <input type="checkbox" v-model="checkGroup" value="swim">swim
+        <input type="checkbox" v-model="checkGroup" value="skate">skate
+        <input type="checkbox" v-model="checkGroup" value="run">run
+    </p>
+    {{ checkGroup }}
+    <p>your favoriate developing language is?
+        <input type="radio" v-model="picked" value="php">php
+        <input type="radio" v-model="picked" value="js">js
+        <input type="radio" v-model="picked" value="cpp">cpp
+
+    </p>
+</div>
+
+
+<script type="javascript">
+    vm = new Vue({
+        el: "#box",
+        data: {
+            mytext: "",
+            isChecked: false,
+            checkGroup: [],
+            picked: "",
+        }
+    })
+</script>
+</body>
+</html>
