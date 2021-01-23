@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+<body>
+<div id="box">
+    <button @click="handleClick">get info</button>
+    <ul>
+        <li v-for="data in dataList">
+            <h3>{{ data.name }}</h3>
+            <img :src="data.poster"/>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+    vm = new Vue({
+        el: "#box",
+        data: {
+            dataList: []
+        },
+        methods: {
+            handleClick() {
+                axios.get("./json/text.json").then(res => {
+                    console.log(res.data.data.films);
+                    this.dataList = res.data.data.films;
+                }).catch(err => {
+                    console.log(err);
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

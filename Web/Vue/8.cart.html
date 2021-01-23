@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <label>
+        <input type="checkbox" @change="handleChange" v-model="isAllChecked">
+    </label>
+    <ul>
+        <li v-for="data in dataList">
+            <label>
+                <input type="checkbox" v-model="checkGroup" :value="data" @change="handleLiChange"/>
+            </label>
+            {{ data }}
+            <button @click="handleDelClick(data)">del</button>
+            {{ data.number }}
+            <button @click="data.number++">add</button>
+        </li>
+    </ul>
+    {{ checkGroup }}
+    <p>total value is:{{ getSum() }}</p>
+    <input type="text" v-model.lazy="myText">
+    {{ mytext }}
+    <input type="number" v-model="myNumber">
+    {{ myNumber }}
+    <input type="text" v-model.trim="myUserName">
+    {{ myUserName }}
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            myUserName: "",
+            myNumber: "",
+            myText: "",
+            checkGroup: [],
+            isAllChecked: false,
+            dataList: [{
+                name: '1',
+                price: 10,
+                number: 1,
+                id: "1",
+            }, {
+                name: '2',
+                price: 20,
+                number: 2,
+                id: "2"
+            }, {
+                name: '3',
+                price: 30,
+                number: 3,
+                id: '3',
+            }
+            ]
+        },
+        methods: {
+            getSum() {
+                // function state change will directly call the function again
+                var sum = 0;
+                for (var i in this.checkGroup) {
+                    sum += this.checkGroup[i].number * this.checkGroup[i].price
+                }
+                return sum
+            },
+            handleChange() {
+                console.log("changed", this.isAllChecked)
+                if (this.isAllChecked) {
+                    this.checkGroup = this.dataList
+                } else {
+                    this.checkGroup = []
+                }
+            },
+            handleLiChange() {
+                console.log("Li changed", this.checkGroup);
+                this.isAllChecked = this.checkGroup.length === this.dataList.length;  // simple check the equality
+            },
+            handleDelClick(data) {
+                var number = data.number--;
+                if (number === 1) {
+                    data.number = 1;
+                }
+
+            }
+        }
+    })
+</script>
+</body>
+</html>
