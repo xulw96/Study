@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+<body>
+<div id="box">
+    {{ myName.substring(0, 1).toUpperCase() +myName.substring(1) }}
+    {{ getMyName }}
+    {{ getMyNameMethod() }}
+    <input type="text" v-model="myText"/>
+    <ul>
+        <li v-for="data in getMyDataList">
+            {{ data }}
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    vm = new Vue({
+        el: "#box",
+        data: {
+            myName: "xiaoMing",
+            myText: "",
+            dataList: ['aaa', 'bbb', "ccc", "ddd"]
+        },
+        method: {
+            getMyNameMethod() {
+                return this.substring(0, 1).toUpperCase() + this.substring(1);
+            }
+        },
+        computed: {
+            getMyDataList() {
+                return this.dataList.filter(item => item.indexOf(this.myText) > -1);
+            },
+            getMyName() {
+                return this.substring(0, 1).toUpperCase() + this.substring(1);
+            },
+        }
+    })
+</script>
+</body>
+</html>
+
