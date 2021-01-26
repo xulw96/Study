@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+
+</head>
+<body>
+
+<div id="box">
+    <navbar></navbar>
+    <sidebar></sidebar>
+</div>
+
+
+<script type="text/javascript">
+    Vue.component("navbar", {
+        template: `<div style="background:yellow">
+<button @click="handleback()">return</button>
+navbar-- {{ navbarName }}
+<button>homepage</button>
+<child></child>
+<navbarchild></navbarchild>
+</div>`, methods: {
+            handleback() {
+                console.log("back");
+            }
+        },
+        data() {
+            return {
+                navbarName: "navbarname",
+            }
+        },
+        components: {
+            navbarchild: {
+                template: `<div>navbarchild</div>`
+            }
+        }
+    })
+    Vue.component("child", {
+        template: `<div>child component</div>`
+    })
+    Vue.component("sidebar", {
+        template: `
+        <div>siderbar component
+<child></child>
+</div>`
+    })
+    vm = new Vue({
+        el: "#box",
+    })  // root component
+</script>
+</body>
+</html>
