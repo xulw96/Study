@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+<body>
+<div id="box">
+    <input type="text" ref="mytext">
+    <button @click="handleAdd"></button>
+    <child ref="mychild"></child>
+</div>
+<script type="text/javascript">
+    Vue.component("child", {
+        tempalte: `<div>
+child
+</div>`,
+        data() {
+            return {
+                childname: "state of child component."
+            }
+        },
+        methods: {
+            add(data) {
+                console.log(data, "method of child component.")
+            }
+        }
+    })
+    var vm = new Vue({
+        el: "#box",
+        data: {},
+        methods: {
+            handleAdd() {
+                console.log("1111", this.$refs.mychild.childname);
+                this.$ref.mychild.add("listen");
+            }
+        }
+    })
+</script>
+</body>
+</html>

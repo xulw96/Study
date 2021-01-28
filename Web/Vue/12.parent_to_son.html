@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+
+</head>
+<body>
+<div id="box">
+    <navbar myname="home" :myshow="false"></navbar>
+    <navbar myname="list" :myshow="true"></navbar>
+    <navbar :myname="parentname" :myshow="true"></navbar>
+</div>
+
+
+<script type="text/javascript">
+    Vue.component("navbar", {
+        tamplate: `<div>
+<button>return</button>
+navbar -- {{ myname }}
+<button v-show="myshow">homepage</button>
+</div>`,
+        // props: ["myname", "myshow"]
+        props: {
+            myname: String,
+            myshow: Boolean,
+        } // check var type
+    })
+    let vm = new Vue({
+        el: "#box",
+        data: {
+            parentname: "state of parent"
+        }
+    })
+</script>
+</body>
+</html>

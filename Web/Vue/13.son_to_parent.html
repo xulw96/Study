@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+
+</head>
+<body>
+<div id="box">
+    <button>click</button>
+    <navbar @myEvent="handleEvent()"></navbar>
+    <sidebar v-show="isShow"></sidebar>
+</div>
+
+
+<script type="text/javascript">
+    Vue.component("navbar", {
+        template: `<div>
+navbar
+<button @click="handleClick">navbar-button</button>
+</div>`,
+        methods: {
+            handleClick() {
+                this.$emit("myEvent")
+            }
+        }
+    })
+    Vue.component(
+        "sidebar", {
+            template: `<div style="background:yellow;width:200px;">
+<ul>
+<li>11111</li>
+</ul>
+</div>`
+        })
+    let vm = new Vue({
+        el: "#box",
+        data: {
+            isShow: false,
+        },
+        methods: {
+            handleEvent() {
+                this.isShow = !this.isShow;
+            }
+        }
+    })
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+<body>
+
+<div id="box">
+    <weixinauthor></weixinauthor>
+    <weixinuser></weixinuser>
+</div>
+<script type="text/javascript">
+    var bus = new Vue(); // the communicate bus
+
+    Vue.component("weixinauthor", {
+        tempalte: `<div style="background: blue">
+I am an author
+<input type="text" ref="mytext"/>
+<button @click=handleClick()>send out</button>
+</div>`,
+        methods: {
+            handleClick() {
+                bus.$emit("weixinmessage", this.$refs.mytext.value)
+            }
+        }
+    })  // publish
+
+    Vue.component("weixinuser", {
+        tempalte: `<div style="background: yellow">
+I am a user
+</div>`,
+        mounted() {
+            bus.$on("weixinmessage", () => {
+                console.log("receive message.")
+            })
+            console.log("life cycle-function. Being called when tag being created.")
+        }
+    }) // subscribe
+
+    var vm = new Vue({
+        el: "#box",
+    })
+</script>
+</body>
+</html>
