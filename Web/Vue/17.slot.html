@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+<body>
+<div id="box">
+    <child>
+        <div slot="b">aaaaaa</div>
+    </child>
+    <swiper>
+        <li v-for="data in dataList">
+            {{ data }}
+        </li>
+    </swiper>
+</div>
+
+<script type="text/javascript">
+    Vue.Component("child", {
+        template: `<div>child
+<slot name="b"></slot>
+</div>`
+    })
+    Vue.Component("swiper", {
+        template: `<div>
+<ul>
+<slot></slot></ul>
+</div>`
+    })
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            dataList: ["111", "222", "333"]
+        }
+    })
+</script>
+
+
+</body>
+</html>

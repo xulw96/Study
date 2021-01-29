@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+<body>
+<div id="box">
+    <keep-alive>
+        <component is="who"></component>
+    </keep-alive>
+    <footer>
+        <ul>
+            <li><a @click="who='home'">homepage</a></li>
+            <li><a @click="who='list'">list page</a></li>
+            <li><a @click="who='cart'">cart page</a></li>
+        </ul>
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            who: 'home' // will delete not selected components unless keep-alive
+        },
+        components: {
+            "home": {
+                template: `<div>home <input type="text"></div>`
+            },
+            "list": {
+                template: `<div>list</div>`
+            },
+            "cart": {
+                template: `<div>cart</div>`
+            }
+        }
+    }
+    })
+</script>
+
+</body>
+</html>
